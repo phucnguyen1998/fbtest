@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
   };
   request(postTextOptions)
   .then((res) => {console.log(res);})
-  .catch(err => {console.log(err.error)})  
+  .catch(err => {res.send(err.error.message)})  
 });
 
 app.listen(PORT, () =>
